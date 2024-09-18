@@ -1,31 +1,24 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-// Contact class with attributes, constructor, and getter/setter methods
 class Contact {
     private String name;
     private String phoneNumber;
     private String email;
-
     public Contact(String name, String phoneNumber, String email) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -33,29 +26,21 @@ class Contact {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
-    @Override
     public String toString() {
         return "Name: " + name + ", Phone: " + phoneNumber + ", Email: " + email;
     }
 }
-
-// AddressBook class that manages a list of contacts
 class AddressBook {
     private List<Contact> contacts;
-
     public AddressBook() {
         contacts = new ArrayList<>();
     }
-
     public void addContact(Contact contact) {
         contacts.add(contact);
     }
-
     public void viewAllContacts() {
         if (contacts.isEmpty()) {
             System.out.println("No contacts found.");
@@ -76,12 +61,9 @@ class AddressBook {
         System.out.println("Contact not found.");
     }
 }
-
-// Main class with menu-driven interface
 public class AddressBookApp {
     private static Scanner scanner = new Scanner(System.in);
     private static AddressBook addressBook = new AddressBook();
-
     public static void main(String[] args) {
         while (true) {
             System.out.println("\nAddress Book Menu:");
@@ -91,8 +73,7 @@ public class AddressBookApp {
             System.out.println("4. Exit");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     addNewContact();
@@ -111,7 +92,6 @@ public class AddressBookApp {
             }
         }
     }
-
     private static void addNewContact() {
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
