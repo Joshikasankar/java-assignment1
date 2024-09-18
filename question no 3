@@ -6,18 +6,12 @@ class Solution {
     size_t rowLetters = 0;
 
     for (const string& word : words) {
-      // If we place the word in this row, it will exceed the maximum width.
-      // Therefore, we cannot put the word in this row and have to pad spaces
-      // for each word in this row.
       if (rowLetters + row.size() + word.length() > maxWidth) {
         const int spaces = maxWidth - rowLetters;
         if (row.size() == 1) {
-          // Pad all the spaces after row[0].
           for (int i = 0; i < spaces; ++i)
             row[0] += " ";
-        } else {
-          // Evenly pad all the spaces to each word (expect the last one) in
-          // this row.
+        } else {.
           for (int i = 0; i < spaces; ++i)
             row[i % (row.size() - 1)] += " ";
         }
@@ -32,7 +26,6 @@ class Solution {
 
     return ans;
   }
-
  private:
   string join(const vector<string>& words, const string& s) {
     string joined;
